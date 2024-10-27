@@ -4,6 +4,7 @@ metadata:
   labels:
     app: zeid
   name: zeid
+  namespace: default
 spec:
   dataVolumeTemplates:
   - apiVersion: cdi.kubevirt.io/v1beta1
