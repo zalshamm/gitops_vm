@@ -2,15 +2,15 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
   labels:
-    app: zeid
-  name: zeid
+    app: gosi
+  name: gosi
   namespace: default
 spec:
   dataVolumeTemplates:
   - apiVersion: cdi.kubevirt.io/v1beta1
     kind: DataVolume
     metadata:
-      name: zeid
+      name: gosi
     spec:
       sourceRef:
         kind: DataSource
@@ -24,7 +24,7 @@ spec:
   template:
     metadata:
       labels:
-        kubevirt.io/domain: zeid
+        kubevirt.io/domain: gosi
     spec:
       domain:
         cpu:
@@ -58,12 +58,12 @@ spec:
         pod: {}
       volumes:
       - dataVolume:
-          name: zeid
+          name: gosi
         name: rootdisk
       - cloudInitNoCloud:
           userData: |-
             #cloud-config
-            user: cloud-user
-            password: '<password>' 
+            user: admin
+            password: 'redhatocp' 
             chpasswd: { expire: False }
         name: cloudinitdisk
