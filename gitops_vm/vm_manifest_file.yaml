@@ -5,7 +5,7 @@ metadata:
   labels:
     app: gosi
   name: gosi
-  namespace: default
+  namespace: gosi
 spec:
   dataVolumeTemplates:
   - apiVersion: cdi.kubevirt.io/v1beta1
